@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "HeadLines.h"
 @interface ViewController ()
 
 @end
@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [HeadLines getHeadlLinesModelWithSuccess:^(NSArray *headLinesArray) {
+        NSLog(@"%@",headLinesArray);
+    } fail:^(NSError *error) {
+        
+    }];
 }
 
 @end
